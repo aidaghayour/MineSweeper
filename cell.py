@@ -25,7 +25,7 @@ class Cell:
     # can not be a cell method because only for the usecase of the class
     @staticmethod
     def create_cell_count_label(location):
-        lbl = Label(location,test=f"Cells left:{settings.CELL_COUNT}")
+        lbl = Label(location,text=f"Cells left:{settings.CELL_COUNT}")
         Cell.cell_count_label_object = lbl
 
     def left_click_actions(self,event):
