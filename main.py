@@ -30,8 +30,11 @@ center_frame.place(x=utils.width_prct(25), y=utils.height_prct(25))
 
 for X in range(settings.GRID_SIZE):
     for Y in range(settings.GRID_SIZE):
-        c = Cell()
+        c = Cell(x=X, y=Y)
         c.create_btn_object(center_frame)
         c.cell_btn_object.grid(column=X, row=Y)
+
+
+Cell.reandomize_mines()
 #Run the window
 root.mainloop()
