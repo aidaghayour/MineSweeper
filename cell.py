@@ -1,9 +1,12 @@
-from tkinter import Button
+from tkinter import Button, Label
 import random
 import settings
+
+
 class Cell:
 
     all = []
+    cell_count_label_object = None
     def __init__(self,x,y, is_mine=False):
         self.is_mine=is_mine
         self.cell_btn_object = None
@@ -18,6 +21,12 @@ class Cell:
         btn.bind('<Button-1>',self.left_click_actions) ## by convention <Button-1> means left click in Tinker!
         btn.bind('<Button-3>',self.right_click_actions) ## by convention <Button-3> means right click in Tinker!
         self.cell_btn_object = btn
+
+    # can not be a cell method because only for the usecase of the class
+    @staticmethod
+    def create_cell_count_label(location):
+        lbl = Label(location,test=f"Cells left:{settings.CELL_COUNT}")
+        Cell.cell_count_label_object = lbl
 
     def left_click_actions(self,event):
         if self.is_mine:
