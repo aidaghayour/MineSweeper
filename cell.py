@@ -1,7 +1,8 @@
 from tkinter import Button, Label
 import random
 import settings
-
+import ctypes # warnings and such
+import sys
 
 class Cell:
 
@@ -78,12 +79,14 @@ class Cell:
             # replace text of cell count with the new count
             if Cell.cell_count_label_object:
                 Cell.cell_count_label_object.configure(text=f"Cells left:{Cell.cell_count}")
+            self.cell_btn_object.configure (bg="SystemButtonFace") # if a flagged (orange) cell is pressed, the bg color is set to nromal
             self.is_opened = True
 
 
     def show_mine(self):
-        # A logic to interrupt the game and display lost message
+        ctypes.windll.user32.MessageBoxW(0, "You clicked on a mine!", "Game Over", 0)
         self.cell_btn_object.configure(bg="red")
+        sys.exit()
 
 
     def right_click_actions(self,event):
