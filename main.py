@@ -5,7 +5,7 @@ from cell import Cell
 root = Tk()
 
 #set color
-root.configure(bg="gray")
+root.configure(bg="black")
 #size:
 root.geometry(f'{settings.WIDTH}x{settings.HEIGHT}')
 
@@ -16,15 +16,15 @@ root.resizable(False,False)
 
 
 #add an frame element
-top_frame = Frame(root, bg='pink',  width=settings.WIDTH,
+top_frame = Frame(root, bg='Black',  width=settings.WIDTH,
     height=utils.height_prct(25))
 #where to place it
 top_frame.place(x=0,y=0)
 
-left_frame = Frame (root, bg="blue", width=utils.width_prct(25), height=utils.height_prct(75))
+left_frame = Frame (root, bg="black", width=utils.width_prct(25), height=utils.height_prct(75))
 left_frame.place(x=0, y=utils.height_prct(25))
 
-center_frame = Frame(root, bg="GREEN", width=utils.width_prct(75),height=utils.height_prct(75) )
+center_frame = Frame(root, bg="black", width=utils.width_prct(75),height=utils.height_prct(75) )
 center_frame.place(x=utils.width_prct(25), y=utils.height_prct(25))
 
 
